@@ -33,10 +33,11 @@ li{
 
 
 #btnRandom{
-    background-color: aqua;
-    color: blue;
+    background-color: rgb(238, 232, 217);
+    color: rgb(77, 77, 199);
     position: fixed;
     display: block;
+    margin-left: 70px;
 }
 
 
@@ -101,4 +102,8 @@ li{
 #socialIcons{
     scale: .5;
     margin-top: -25px;
+}
+
+#autor{
+    font-size: 18px;
 }

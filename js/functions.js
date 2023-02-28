@@ -89,7 +89,7 @@ function randomizeInfo(){
         name = randomArray(namesMale);
     }
 
-    document.getElementById("perfilImage").src = "images/" + image + ".jpg";
+    document.getElementById("perfilImage").src = "images/perfil/" + image + ".jpg";
     document.getElementById("completeName").innerHTML = name + " " + lastName;
 
     //Fecha nacimiento, decidi no utilizarlo
@@ -98,7 +98,7 @@ function randomizeInfo(){
     //Email
     document.getElementById("email").innerHTML = name + "." + lastName + "@email.com"; 
 
-    //
+    //Descripcion introductoria
     document.getElementById("aboutMe").innerHTML = randomArray(aboutMe);
 
     //HOBBIES ***
@@ -107,7 +107,7 @@ function randomizeInfo(){
     //HABILIDADES ***
     randomList(habilities, "habilities", 3, 4);
 
-    //APTITUDES
+    //APTITUDES ***
     randomList(attitudes, "attitudes", 3, 4);
 
     //EXPERIENCIAS LABORALES ***
