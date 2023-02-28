@@ -1,3 +1,104 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
 body {
-    background-color: beige;
+    background: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: rgb(88, 86, 86);
+}
+
+
+h2 {
+    padding-left: 25px;
+    margin-left: -25px;
+    background-color: rgba(114, 167, 226, 0.562);
+    background-color: rgb(80, 132, 190);
+    color: aliceblue;
+}
+
+
+img{
+    margin-top: 100px;
+    scale: 1.35;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+li{
+    margin: 10px;
+}
+
+
+#btnRandom{
+    background-color: aqua;
+    color: blue;
+    position: fixed;
+    display: block;
+}
+
+
+/*Barra navegacion lateral*/
+#navegator {
+    position: fixed;
+    margin-left: -10px;
+    margin-top: 25px;
+    
+    width: 300px;
+    height: 100%;
+    text-align: center;
+
+    background-color: rgb(80, 132, 190);
+}
+
+#navegator ul{
+    list-style-type: none;
+    text-align: center;
+    margin-top: 20%;
+    padding: 0px;
+}
+
+#navegator li{
+    display:block;
+    text-align: center;
+    
+}
+
+#navegator li a {
+    padding: 2px 7px 2px 7px;
+    color: rgba(255, 255, 255, 0.623);
+    text-decoration: none;
+}
+
+#navegator li a:hover{
+    color: #ffffff;
+}
+
+#navegator li a:focus{
+    color: #ffffff;
+}
+
+#navegator p{
+    color: #ffffff;
+    font-size: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 15px;
+    padding-bottom: 25px;
+}
+
+/* Informacion */
+.info div{
+    margin-left: 330px;
+    padding-top: 25px;
+    padding-bottom: 60px;
+}
+
+#aboutMe{
+    font-style: italic;
+}
+
+#socialIcons{
+    scale: .5;
+    margin-top: -25px;
 }
