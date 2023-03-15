@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/functions.js"></script>
 </head>
-<body onload="randomizeInfo()">
-    
-    <button type="button" id="btnRandom" onclick="randomizeInfo()"> Generar nuevo CV</button>
+<body onload="fetchRequest()">
+    <button type="button" id="btnRandom" onclick="fetchRequest()"> Generar nuevo CV</button>
     
     <div id="navegator">
-        <img id="perfilImage">
+        <img id="perfilImage" alt="perfil image">
         <p id="completeName"></p>
         <ul>
             <li><a href="#aaboutMe">Sobre mi</a></li>
@@ -54,17 +53,17 @@
             <h2>Contacto</h2>
             <p id="email"></p>
             <ul>
-                <img id="socialIcons" src="images/social/0.png" alt="">
-                <img id="socialIcons" src="images/social/1.png" alt="">
-                <img id="socialIcons" src="images/social/2.png" alt="">
-                <img id="socialIcons" src="images/social/3.png" alt="">
+                <img id="socialIcons" src="images/social/0.png" alt="githud icon">
+                <img id="socialIcons" src="images/social/1.png" alt="facebook icon">
+                <img id="socialIcons" src="images/social/2.png" alt="linkedin icon">
+                <img id="socialIcons" src="images/social/3.png" alt="twitter icon">
             </ul>
-        
-        <p id="autor">***Proyecto final del curso "Primeros pasos del desarrollo frontend" de Argentina Programa 4.0 (2023), realizado por Pedro Moreira***</p>
         </div>  
-
-        
     </div>
+
+    <footer>
+        <p id="autor">Proyecto final del curso "Primeros pasos del desarrollo frontend" de Argentina Programa 4.0 (2023), realizado por Pedro Moreira</p>
+    </footer>
     
 </body>
 </html>

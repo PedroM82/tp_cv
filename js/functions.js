@@ -1,36 +1,9 @@
 //Informacion que sera tomada al azar
-const gender = [
-    "female", "male"
-];
-
-const namesFemale = [
-    "Sofía", "María", "Lucía", "Martina", "Catalina", "Elena", "Emilia", "Valentina", "Paula", "Zoe"
-];
-
-const namesMale = [
-    "Santiago", "Mateo", "Juan", "Matías", "Nicolás", "Benjamín", "Pedro", "Tomás", "Thiago", "Santino"
-];
-
-const lastNames = [
-    "González","Rodríguez","Gómez","Fernández","López","Martínez","Díaz","Pérez","Sánchez","Romero"
-];
-
 const aboutMe = [
     "Gracias a mi formación especializada, considero que puedo aportar valor y seguir desarrollándome profesionalmente en una compañía que coincida con mis valores y expectativas",
     "Como persona organizada y con una gran motivación, soy capaz de adaptarme a cualquier circunstancia y dar siempre lo mejor de mí en cualquier proyecto, al mismo tiempo que me esfuerzo por trabajar en equipo y fomentar valores como los del compañerismo",
     "Mi objetivo principal es desarrollarme profesionalmente y evolucionar en mi sector, de modo que busco oportunidades que me permitan hacerlo, al tiempo que trataré de alinearme completamente con los objetivos de la empresa"
 ]
-
-
-//Imagenes extraidas de: https://randomuser.me/
-const imageFemale = [
-    "f0", "f1", "f2", "f3"
-];
-
-const imageMale = [
-    "m0", "m1", "m2", "m3"
-];
-
 
 const hobbies = [
     "Cocinar","Pintar","Leer","Jugar videojuegos","Escribir","Bailar","Ver películas","Escuchar música","Hacer manualidades","Practicar fotografía","Viajar"
@@ -39,7 +12,6 @@ const hobbies = [
 const habilities = [
     "Trabajo en equipo","Iniciativa","Resolución de problemas","Aprendizaje fluido","Comunicación efectiva"
 ];
-
 
 const attitudes = [
     "Calidad del trabajo", "Consistencia", "Comunicacíon", "Indepedencia", "Gentíon del tiempo", "Trabajo en equipo", "iniciativa", "Creatividad", "Honestidad"
@@ -76,29 +48,33 @@ const jobExperience = [
     }
 ];
 
-function randomizeInfo(){
+
+
+//Conectarse a la api y obtener info
+const url = "https://randomuser.me/api/"
+
+function fetchRequest(){
+   fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    randomizeInfo(data)
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  }); 
+}
+
+function randomizeInfo(data){
+    const result = data["results"]["0"];
+    const picture = result["picture"]["large"];
+    const name = result["name"]["first"];
+    const lastName = result["name"]["last"];
+    const email = result["email"];
+
     //INFO PERSONAL ***
-    //Imagen, nombre y apellido
-    let lastName = randomArray(lastNames);
-    let image, name;
-    if (randomArray(gender) == "female"){
-        image = randomArray(imageFemale);
-        name = randomArray(namesFemale);
-    }else{
-        image = randomArray(imageMale);    
-        name = randomArray(namesMale);
-    }
-
-    document.getElementById("perfilImage").src = "images/perfil/" + image + ".jpg";
+    document.getElementById("perfilImage").src = picture;
     document.getElementById("completeName").innerHTML = name + " " + lastName;
-
-    //Fecha nacimiento, decidi no utilizarlo
-    //document.getElementById("age").innerHTML = randomNumber(1, 30) + " / " + randomNumber(1, 12) + " / " + (2023 - randomNumber(22, 30));
-
-    //Email
-    document.getElementById("email").innerHTML = name + "." + lastName + "@email.com"; 
-
-    //Descripcion introductoria
+    document.getElementById("email").innerHTML = email;
     document.getElementById("aboutMe").innerHTML = randomArray(aboutMe);
 
     //HOBBIES ***
